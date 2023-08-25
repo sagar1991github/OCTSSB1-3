@@ -1,6 +1,7 @@
 package com.velocity.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -54,12 +55,15 @@ public class PolicyServiceImpl implements PolicyService {
 	}
 
 	@Override
-	public void delete(long id) {
+	public void delete (long id) {
      
-		for(Policy p : policyInfo) {
-			if(p.getId() == id) {
-				policyInfo.remove(p);
-			}
+	    Iterator <Policy> itr = policyInfo.iterator();
+	    
+	    while(itr.hasNext()) {
+	    	Policy p=itr.next();
+	    	if(p.getId()==id) {
+	    		itr.remove();
+	    	}
 		}
 		
 	}

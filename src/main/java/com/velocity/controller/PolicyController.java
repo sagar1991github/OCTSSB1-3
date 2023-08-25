@@ -33,11 +33,11 @@ public class PolicyController {
 		policyService.create(policy);
 	}
 
-	@PutMapping("/update-policy/(id)")
+	@PutMapping("/update-policy/{id}")
 	public void updatePolicy(@PathVariable("id") long id, @RequestBody Policy policy) {
 		policyService.update(id, policy);
 	}
-	@DeleteMapping("/delete-policy/(id)")
+	@DeleteMapping("/delete-policy/{id}")
 	public void deletePolicy(@PathVariable long id) {
 		policyService.delete(id);
 	}

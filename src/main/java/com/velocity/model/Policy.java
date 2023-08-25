@@ -1,5 +1,7 @@
 package com.velocity.model;
 
+
+@Entity
 public class Policy {
 
 	private long id;
